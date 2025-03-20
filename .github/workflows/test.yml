@@ -1,0 +1,13 @@
+name: test
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  nondeterminism:
+    runs-on: ubuntu-latest
+    steps:
+      - run: ./install_colpack.sh
+      - run: ./run_colpack.sh
