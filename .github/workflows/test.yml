@@ -12,5 +12,11 @@ jobs:
       run:
         working-directory: ./scripts
     steps:
-      - run: ./install_colpack.sh
-      - run: ./run_colpack.sh
+      - name: Check out the repository to the runner
+        uses: actions/checkout@v4  
+      - name: Make the script files executable
+        run: chmod +x install_colpack.sh run_colpack.sh
+      - name: Install ColPack
+        run: ./install_colpack.sh
+      - name: Run ColPack
+        run: ./run_colpack.sh
